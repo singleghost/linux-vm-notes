@@ -102,7 +102,7 @@
   majority of possible virtual addresses that point to nowhere, no memory is
   used at all. This also makes it easy for the CPU to determine that an address
   is not valid - if at any point a table entry is empty, then the address is not
-  valid.
+  valid.(注：如果我们不使用 multilevel 的方式的话，而是使用一张表来存储所有的映射，尽管地址空间有很多是用不到的，但是这张表的大小是无法改变的。而使用 multilevel 建表的好处就是我们不需要为那些用不到的地址空间额外建立表格了，只需要在上层的 table entry 中填上 empty，就不需要分配下层的 table）
 
 * Looking at our example diagrammatically:
 
